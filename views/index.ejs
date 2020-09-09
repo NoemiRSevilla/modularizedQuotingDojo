@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Quotes</title>
+
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/css.css">
+    </head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <h4 class="white mr-auto">Welcome to QuotingDojo!</h4>
+    </nav>
+    <br>
+    <div class="container row">
+        <form action="/add" method="POST">
+<!-- tip to easily see objects printed in full instead of [object Object] -->
+<!-- based on the structure of your messages, determine how to display them -->
+            <% if(messages.creation) { %>
+                <% for (var x of messages.creation) { %>
+                    <h6 class="red"><%= x %></h6>
+                <% } %>
+            <% } %>
+            <div id="errors" class="red"></div>
+            <div class="form-group col-12">
+                <label for="author">Author: </label>
+                <input type="text" class="form-control" name="author" placeholder="Must be more than 3 characters">
+            </div>
+            <div class="form-group col">
+                <label for="quote">Quote: </label>
+                <textarea class="form-control" name="theQuote" placeholder="Must be more than 10 characters"
+                    rows="3"></textarea>
+            </div>
+            <div class="row">
+                <button type="submit" class="moveitright col btn btn-success " rows="1">Submit</button>
+                <a href="/quotes" class="btn btn-primary col" rows="1">Skip to Quotes</a>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

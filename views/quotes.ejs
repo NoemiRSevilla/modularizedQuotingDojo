@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Quotes</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/css.css">
+    </head>
+<body>
+    <div class="col-5">
+    <h1 class="move">Here are my awesome quotes!</h1>
+    <div class="box mr-auto move">
+    <% for (var x of allQuotes){ %>
+        <div class="godown">
+            <% console.log(x); %>
+            <h4>"<%=x.theQuote %>"</h4>
+            <h6>-<%=x.author %> at <%= x.createdAt %>
+            </h6>
+        </div>
+    <% } %>
+    </div>
+</div>
+<a href="/">Add Quote</a>
+</body>
+</html>
